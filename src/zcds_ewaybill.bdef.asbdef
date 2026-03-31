@@ -1,0 +1,16 @@
+managed implementation in class zbp_cds_ewaybill unique;
+strict ( 2 );
+
+define behavior for ZCDS_EwayBill //alias <alias_name>
+persistent table ztable_einvoice
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) ElectronicDocUUID,Invoice;
+  static action CreateIrn parameter zst_irn_param result [1] zst_irn_param;
+  static function GetInvoiceData result [1] $self;
+}

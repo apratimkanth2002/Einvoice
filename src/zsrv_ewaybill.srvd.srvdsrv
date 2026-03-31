@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination EwayBill'
+define service ZSRV_EWAYBILL {
+  expose ZCDS_EwayBill;
+}
